@@ -42,15 +42,15 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className={`hidden absolute w-full md:flex transform ${menuOpen ? 'translate-y-0' : 'translate-y-[-100%] -z-10'}   gap-6 items-center justify-center ${darkMode === 'dark' ? 'bg-blue-500 text-black' : 'bg-orange-600 text-white'} py-2 `} style={{ transition: '0.3s ease-in-out' }}>
+            <div className={`hidden absolute w-full md:flex transform ${menuOpen ? 'translate-y-0' : 'translate-y-[-100%] -z-10'}   gap-6 items-center justify-center ${darkMode === 'dark' ? 'bg-blue-500 text-black' : 'bg-orange-600 text-white'}  `} style={{ transition: '0.3s ease-in-out' }}>
                 <nav className='flex gap-9   font-semibold text-sm'>
-                    <a href='/#home' className=' hover:text-red-500  transition'>Home</a>
-                    <a href='/#about' className=' hover:text-red-500  transition'>About Us</a>
-                    <a href='/#service' className=' hover:text-red-500  transition'>Services</a>
-                    <a href='/#usecase' className=' hover:text-red-500  transition'>Use Cases</a>
-                    <a href='/#career' className=' hover:text-red-500  transition'>Careers</a>
-                    <a href='/#contact' className=' hover:text-red-500  transition'>Contact</a>
-                    <a href='/#news' className=' hover:text-red-500  transition'>News & Media</a>
+                    <a href='/#home' className=' hover:border-b-2 py-3 border-black transition'>Home</a>
+                    <a href='/#about' className=' hover:border-b-2 py-3 border-black transition'>About Us</a>
+                    <a href='/#service' className=' hover:border-b-2 py-3 border-black transition'>Services</a>
+                    <a href='/#usecase' className=' hover:border-b-2 py-3 border-black transition'>Use Cases</a>
+                    <a href='/#career' className=' hover:border-b-2 py-3 border-black transition'>Careers</a>
+                    <a href='/#contact' className=' hover:border-b-2 py-3 border-black transition'>Contact</a>
+                    <a href='/#news' className=' hover:border-b-2 py-3 border-black transition'>News & Media</a>
                 </nav>
             </div>
 

@@ -58,7 +58,7 @@ const About = () => {
                         transition={{ duration: 1 }}
                     />
                 </div>
-                <div className='w-[500px] md:1/2 mx-auto mt-4'>
+                <div className='w-[80%] md:w-1/2 mx-auto mt-4'>
                     <motion.h1
                         className={`text-xl font-semibold my-2 ${darkMode === 'dark' ? 'text-blue-500' : 'text-orange-600'}`}
                         initial={{ opacity: 0, x: -50 }}
@@ -78,7 +78,7 @@ const About = () => {
                     <motion.p
                         initial={{ opacity: 0 ,scale:0.8}}
                         whileInView={{ opacity: 1, scale:1 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1 }} className='w-[90%]'
                     >
                         If Newton had not been born, the law of gravitation would have remained all the same and would have worked all the same. It was Newton's genius which formulated it, discovered it, brought it into consciousness, made it a conscious thing to the human race." – Swami Vivekananda. <br /> <br />This is the same alignment we have around data and related technologies. We believe that we are helping organizations by formulating solutions around digital transformation. Each process within an organization demands sustainable growth and continuous improvement through innovation. At WaysAhead Global, we are practising the principles of progressive disruptive innovations, every single day.
                     </motion.p>
