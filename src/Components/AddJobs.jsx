@@ -51,7 +51,7 @@ const AddJobs = () => {
         setError('');
     
         try {
-            const response = await fetch('http://localhost:3000/api/job/jobs', {
+            const response = await fetch('https://ways-ahead-shahareyar-backend.vercel.app/api/job/jobs', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json", 

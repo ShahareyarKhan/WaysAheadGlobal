@@ -28,7 +28,7 @@ const Contact = () => {
         setStatus('Sending...');
 
         try {
-            const response = await fetch('http://localhost:3000/submit-form', {
+            const response = await fetch('https://ways-ahead-shahareyar-backend.vercel.app/submit-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

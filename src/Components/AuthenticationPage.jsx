@@ -21,7 +21,7 @@ const AuthenticationPage = () => {
     e.preventDefault();
     const endpoint = isLogin ? "/api/auth/login" : "/api/auth/signup";
     try {
-      const response = await axios.post(`http://localhost:3000${endpoint}`, formData);
+      const response = await axios.post(`https://ways-ahead-shahareyar-backend.vercel.app/${endpoint}`, formData);
       console.log(response.data);
       alert(isLogin ? "Login Successful!" : "Signup Successful!");
 

@@ -16,7 +16,7 @@ const Careers = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/job/jobs', {
+                const response = await fetch('https://ways-ahead-shahareyar-backend.vercel.app/api/job/jobs', {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -56,7 +56,7 @@ const Careers = () => {
         formData.append("resume", resume);
 
         try {
-            const response = await fetch('http://localhost:3000/api/job/jobs/apply', {
+            const response = await fetch('https://ways-ahead-shahareyar-backend.vercel.app/api/job/jobs/apply', {
                 method: 'POST',
                 body: formData,
             });
