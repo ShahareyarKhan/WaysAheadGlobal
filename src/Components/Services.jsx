@@ -79,7 +79,7 @@ const Services = () => {
 
     const { darkMode, toggleMode } = useMode();
     return (
-        <motion.section id='service' className="py-7 w-[90%] mx-auto"
+        <motion.section id='service' className="py-7 w-[100%] mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}>
@@ -91,11 +91,11 @@ const Services = () => {
             >
                 Our Services
             </motion.h2>
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6 w-[80%] mx-auto">
+            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6  mx-auto">
                 {Offerings.map((offer) => (
                     <motion.div
                         key={offer.id}
-                        className="relative  shadow-xl rounded-2xl text-center flex flex-col items-center gap-4 transition-all duration-100 hover:shadow-2xl z-10 cursor-pointer  transform pb-6 w-3/4 mx-auto md:w-full"
+                        className="relative  shadow-xl rounded-2xl text-center flex flex-col items-center gap-4 transition-all duration-100 hover:shadow-2xl z-10 cursor-pointer  transform pb-6 max-w-[400px] mx-auto md:w-full"
                         initial={{ opacity: 0, scale: 0.7 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1 }}
@@ -113,9 +113,9 @@ const Services = () => {
                             {offer.description}
                         </p>
 
-                        <ul className=" text-sm  space-y-2    min-h-[150px]  flex flex-col justify-center">
+                        <ul className=" text-sm  space-y-2 min-h-[150px]  flex flex-col justify-center w-full items-center">
                             {offer.points.map((point, idx) => (
-                                <li key={idx} className="flex items-center gap-2  ">
+                                <li key={idx} className="flex items-center text-center gap-2  ">
                                     ✅ {point}
                                 </li>
                             ))}

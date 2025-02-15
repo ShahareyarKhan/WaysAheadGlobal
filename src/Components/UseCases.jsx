@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { useMode } from '../context/ModeContext';
-import { motion } from 'framer-motion';
+
 const UseCases = () => {
     const useCase = [
         {
@@ -49,36 +49,48 @@ const UseCases = () => {
         },
     ];
 
-    const { darkMode, toggleMode } = useMode();
+    const { darkMode } = useMode();
+    
+    const [slidesToShow, setSlidesToShow] = useState(1);
+
+    useEffect(() => {
+        const updateSlidesToShow = () => {
+            setSlidesToShow(window.innerWidth >= 768 ? 2 : 1);
+        };
+
+        updateSlidesToShow();
+        window.addEventListener("resize", updateSlidesToShow);
+        return () => window.removeEventListener("resize", updateSlidesToShow);
+    }, []);
 
     return (
-        <section id="usecase" className="min-h-screen  py-24  p-4 w-full md:w-3/4  mx-auto">
+        <section id="usecase" className="min-h-screen py-24 p-4 w-full md:w-3/4 mx-auto">
             <h2 className={`text-3xl md:text-4xl font-bold text-center mt-30 ${darkMode === 'dark' ? 'text-blue-500' : 'text-orange-600'}`}>
                 Use Cases
             </h2>
-
 
             <Slide
                 autoplay={true}
                 duration={2000}
                 infinite={true}
-                slidesToShow={2}
+                slidesToShow={slidesToShow}
                 indicators={true}
-                slidesToScroll={0.9}
-                className="mt-4"
+                slidesToScroll={1}
+                arrows={true}
+                className="mt-4 py-6"
             >
                 {useCase.map((item) => (
-                    <div key={item.id} className="flex flex-col items-center justify-center p-4 pb-7 hover:scale-105" style={{transition:"0.3s all ease-in-out"}}>
+                    <div key={item.id} className="flex flex-col items-center justify-center p-4 pb-7 opacity-70 hover:opacity-100" style={{ transition: "0.3s all ease-in-out" }}>
                         <img
                             src={item.img}
                             alt={item.title}
-                            className="w-full max-w-[500px] h-64 md:h-80 rounded-lg shadow-xl"
+                            className="w-full max-w-[500px] h-50 md:h-60 rounded-lg shadow-xl"
                         />
                         <h2 className="text-xl font-bold text-center mt-4">{item.title}</h2>
-
                         <p className="text-center text-xs mt-2">{item.description}</p>
-
-                        <a href={item.link} className={`absolute bottom-0 ${darkMode === 'dark' ? 'text-blue-500' : 'text-orange-600'} font-semibold text-sm `}>Learn more &rarr;</a>
+                        <a href={item.link} className={`absolute bottom-0 ${darkMode === 'dark' ? 'text-blue-500' : 'text-orange-600'} font-semibold text-sm`}>
+                            Learn more &rarr;
+                        </a>
                     </div>
                 ))}
             </Slide>
